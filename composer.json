@@ -1,5 +1,5 @@
 {
-    "name": "amosdeassis/php-edi-parser",
+    "name": "amosassis/php-edi-parser",
     "description": "Library thats parse EDI files from Creditcard transactions data",
     "type": "library",
     "require-dev": {
