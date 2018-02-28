@@ -1,0 +1,22 @@
+{
+    "name": "amosdeassis/php-edi-parser",
+    "description": "Library thats parse EDI files from Creditcard transactions data",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Amos de Assis",
+            "email": "amos@am10.com.br"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "PHPEDIParser\\": "src/"
+        }
+    }
+}
