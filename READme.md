@@ -1,0 +1,1 @@
+Biblioteca para leitura dos arquivos EDI para conciliação de operações com cartao de credito CIELO.
