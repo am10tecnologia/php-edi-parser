@@ -8,9 +8,9 @@ class HeaderRegister extends BaseRegister {
     {
         $this->addField(new RegisterField('tipo_de_registro','N', 1, 1, 1,true,'Constante “0”: identifica o tipo de registro header', '0'));
         $this->addField(new RegisterField('estabelecimento_matriz','N', 2, 11, 10,true,'Número do estabelecimento matriz da cadeia de extrato eletrônico.', '0'));
-        $this->addField(new RegisterField('data_processamento','N', 12, 19, 8,true,'AAAAMMDD – data em que o arquivo foi gerado.', '0'));   
-        $this->addField(new RegisterField('periodo_inicial','N', 20, 27, 8,true,'AAAAMMDD –  menor data de captura encontrada no movimento.', '0'));   
-        $this->addField(new RegisterField('periodo_final','N', 28, 35, 8,true,'AAAAMMDD – maior data de captura encontrada no movimento.', '0'));     
+        $this->addField(new RegisterField('data_processamento','D', 12, 19, 8,true,'AAAAMMDD – data em que o arquivo foi gerado.', '0'));   
+        $this->addField(new RegisterField('periodo_inicial','D', 20, 27, 8,true,'AAAAMMDD –  menor data de captura encontrada no movimento.', '0'));   
+        $this->addField(new RegisterField('periodo_final','D', 28, 35, 8,true,'AAAAMMDD – maior data de captura encontrada no movimento.', '0'));     
         $this->addField(new RegisterField('sequencia','N', 36, 42, 7,true,'Número sequencial do arquivo. Nos casos de recuperação este dado será enviado como 9999999.', '0'));     
         $this->addField(new RegisterField('adquirente','A', 43, 47, 5,true,'Constante Cielo.', '0'));     
         $this->addField(new RegisterField('opcao_extrato','N', 48, 49, 2,true,'Tipo de arquivo.', '0'));     

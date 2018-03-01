@@ -12,14 +12,16 @@ class File
         $this->txtReader = $txtReader;
     }
 
+    /**
+     * Populates the registers array based on EDI file content     * 
+     */
+
     private function parseEDIFile()
     {
         $ediFileContentArray = $this->txtReader->toArray();       
 
         foreach ($ediFileContentArray as $line) {
             $register = $line[0];
-
-
             switch ($register) {
                 case \PHPEDIParser\Parameters::HEADER_REGISTER:
                     $register = new \PHPEDIParser\Parser\Registers\HeaderRegister();
@@ -53,6 +55,10 @@ class File
         }        
     }
 
+    /**
+     * Validate number of registers
+     * @return boolean
+     */
     private function validateTrailer()
     {
         $qtdRegisters = $this->countRegisters();
@@ -65,6 +71,11 @@ class File
         return true;
     }
 
+    /**
+     * Return the number of registers
+     * @return integer
+     */
+
     private function countRegisters()
     {
         $roDetail = isset($this->registers['ro_detail']) ? count($this->registers['ro_detail']) : 0;
@@ -75,6 +86,10 @@ class File
         return $roDetail + $cvDetail + $arvDetail + $roAntecDetail + $roAntecDebitDetail;
     }
 
+    /**
+     * Return the EDI parsed in array
+     * @return array
+     */
     public function getEDI()
     {
         $this->parseEDIFile();
